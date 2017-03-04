@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Find Your ebooks here">
+    <meta name="author" content="Himanshu">
+    
+
+    <title>Ebooks</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Open+Sans|Shrikhand|Supermercado+One" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+   <script src="../libs/angular.min.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/model.js"></script>
+    <script src="../js/controller.js"></script>
+
+  
+
+  
+  </head>
+
+  <body ng-app="ebookappflow" ng-controller="ebookCtrlflow">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"> Ebooks for Everyone</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+           
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    
+
+    <div class="container-fluid " >
+      <div class="well">
+<div class="row">
+        <div class="header-text">
+          Search For Any IT Related Book Here
+        </div>
+      </div>
+      <div class="row ">
+         <div class="col-md-6 col-md-offset-3">
+         <form enctype="multipart/form-data" ng-submit="searchebook()">
+              <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search for Books" ng-model="search">
+      <span class="input-group-btn">
+        <button class="btn btn-success" type="button" ng-click="searchebook()">Search</button>
+      </span>
+    </div>
+         </form>
+         </div>
+      </div>
+
+      </div>
+            
+    <div class="row ">
+     <div class="body-text">
+
+       <!--  <table ng-repeat="text in result" class="table">
+       <tr ng-show="showIt">
+        
+        
+           
+           <td><img ng-src='{{text.Image}}' alt="">
+         {{text.Title}}   </td>
+         
+       </tr>
+     </table>-->
+     <div class="panel panel-primary" ng-repeat="text in result">
+  <div class="panel-heading">
+    <h3 class="panel-title">Book Name : {{text.Title}}</h3>
+  </div>
+  <div class="panel-body">
+   <img ng-src='{{text.Image}}' alt="">
+   <p>ISBN No. {{text.isbn}}</p>
+  </div>
+  <div class="panel-footer">Book SubTitle : {{text.SubTitle}}</div>
+</div>
+     </div>
+
+
+    </div>
+      
+    </div> 
+
+   <div class="container-fluid">
+     <div class="row">
+        <footer id="footer">
+        <p>Coded By Himanshu Sharma &copy;2k17</p>
+      </footer>
+     </div>
+   </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   
+    <script src="../libs/bootstrap.js"></script>
+    
+  </body>
+</html>
